@@ -1,0 +1,27 @@
+MODEL:
+  PRETRAIN_CHOICE: 'self'
+
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PADDING: 10
+
+DATASETS:
+  NAMES: ('dukemtmc')
+
+DATALOADER:
+  SAMPLER: 'softmax'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+TEST:
+  IMS_PER_BATCH: 128
+  RE_RANKING: 'no'
+  WEIGHT: "path"
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+  WEIGHT: '/home/luffy/Workspace/Models/reid/resnet50_reid_baseline_duke_86.4.pth'
+
+OUTPUT_DIR: "/home/luffy/Workspace/Log/SearchMissingChildSystem"
+
+
